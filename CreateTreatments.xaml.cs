@@ -11,11 +11,10 @@ public partial class CreateTreatments : ContentPage
         InitializeComponent();
         this.appointmentID = appointmentID;
 
-        LoadTreatment(); // Load the treatment asynchronously
+        LoadTreatment();
     }
     private async void LoadTreatment()
     {
-        // Retrieve treatment data associated with the appointment ID from the database
         treatment = await FetchTreatmentForAppointment(appointmentID);
 
         if (treatment == null)
@@ -40,17 +39,12 @@ public partial class CreateTreatments : ContentPage
     {
         var savedTreatment = (Treatment)BindingContext;
 
-        if (savedTreatment != null) // Check if the savedTreatment object is not null
+        if (savedTreatment != null)
         {
             savedTreatment.AppointmentID = appointmentID;
 
             await App.Database.SaveTreatmentAsync(savedTreatment);
             await Navigation.PopAsync();
-        }
-        else
-        {
-            // Handle the situation where savedTreatment is null
-            // You might want to display an error message or take corrective action
         }
     }
 

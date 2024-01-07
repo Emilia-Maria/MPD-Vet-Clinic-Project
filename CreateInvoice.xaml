@@ -4,8 +4,8 @@
              x:Class="Vet_Clinic.Models.CreateInvoice"
              Title="Create invoice">
     <StackLayout Margin="20">
-        <Entry Placeholder="Enter the total amount"
-               Text="{Binding TotalAmount}"
+        <Label Text="Total amount" FontSize="14" Margin="0,5" />
+        <Entry Text="{Binding TotalAmount}"
                Keyboard="Numeric" />
         <Grid>
             <Grid.ColumnDefinitions>

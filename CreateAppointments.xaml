@@ -4,25 +4,25 @@
              x:Class="Vet_Clinic.CreateAppointments"
              Title="Create appointment">
     <StackLayout Margin="20, 0">
-        <Label Text="Enter a title" FontSize="14" Margin="0,5" />
+        <Label Text="Title" FontSize="14" Margin="0,5" />
         <Editor Text="{Binding Title}"
                 HeightRequest="70" />
-        <Label Text="Enter the reason of visit" FontSize="14" Margin="0,5" />
+        <Label Text="Reason of visit" FontSize="14" Margin="0,5" />
         <Editor Text="{Binding ReasonOfVisit}"
                 HeightRequest="70" />
-        <Label Text="Select a date and time" FontSize="14" Margin="0,5" />
+        <Label Text="Date and time" FontSize="14" Margin="0,5" />
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <DatePicker x:Name="datePicker" Margin="0,5,5,5" />
-            <TimePicker x:Name="timePicker" Margin="5,5,0,5" Grid.Column="1" />
+            <DatePicker x:Name="datePicker" Margin="0,5,5,5" Date="{Binding DateTime}"/>
+            <TimePicker x:Name="timePicker" Margin="5,5,0,5" Time="{Binding DateTime}" Grid.Column="1" />
         </Grid>
-        <Label Text="Select a pet" FontSize="14" Margin="0,5" />
+        <Label Text="Pet" FontSize="14" Margin="0,5" />
         <Picker x:Name="PetPicker" />
-        <Label Text="Select a doctor" FontSize="14" Margin="0,5" />
+        <Label Text="Doctor" FontSize="14" Margin="0,5" />
         <Picker x:Name="DoctorPicker" Margin="0,5"/>
         <Grid>
             <Grid.ColumnDefinitions>

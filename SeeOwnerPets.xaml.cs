@@ -11,12 +11,11 @@ public partial class SeeOwnerPets : ContentPage
         InitializeComponent();
         this.ownerId = ownerId;
 
-        DisplayPets(); // Load pets for the specified owner
+        DisplayPets();
     }
 
     private async void DisplayPets()
     {
-        // Fetch pets based on the ownerId
         List<Pet> petsForOwner = await App.Database.GetPetsByOwnerAsync(ownerId);
         petsListView.ItemsSource = petsForOwner;
     }

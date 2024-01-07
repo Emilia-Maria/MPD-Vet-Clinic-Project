@@ -3,36 +3,38 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Vet_Clinic.CreatePets"
              Title="Create pet">
-    <StackLayout Margin="20">
-        <Editor Placeholder="Enter the name of the pet"
-                Text="{Binding Name}"
-                HeightRequest="100" />
-        <Editor Placeholder="Enter the species of the pet"
-                Text="{Binding Species}"
-                HeightRequest="100" />
-        <Editor Placeholder="Enter the breed of the pet"
-                Text="{Binding Breed}"
-                HeightRequest="100" />
-        <Picker Title="Select a gender" SelectedItem="{Binding Gender}">
-            <Picker.Items>
-                <x:String>Male</x:String>
-                <x:String>Female</x:String>
-            </Picker.Items>
-        </Picker>
-        <Label Text="Select a date" FontSize="14" />
-        <DatePicker Date="{Binding DateOfBirth}"
+    <ScrollView>
+        <StackLayout Margin="20">
+            <Label Text="Name" FontSize="14" Margin="0,5" />
+            <Editor Text="{Binding Name}"
                     HeightRequest="100" />
-        <Picker x:Name="OwnerPicker" Title="Select owner"/>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Button Text="Save"
-                    Clicked="OnSaveButtonClicked" />
-            <Button Grid.Column="1"
-                    Text="Delete"
-                    Clicked="OnDeleteButtonClicked"/>
-        </Grid>
-    </StackLayout>
+            <Label Text="Species" FontSize="14" Margin="0,5" />
+            <Editor Text="{Binding Species}"
+                    HeightRequest="100" />
+            <Label Text="Breed" FontSize="14" Margin="0,5" />
+            <Editor Text="{Binding Breed}"
+                    HeightRequest="100" />
+            <Picker Title="Gender" SelectedItem="{Binding Gender}">
+                <Picker.Items>
+                    <x:String>Male</x:String>
+                    <x:String>Female</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label Text="Date of birth" FontSize="14" />
+            <DatePicker Date="{Binding DateOfBirth}"
+                        HeightRequest="100" />
+            <Picker x:Name="OwnerPicker" Title="Owner"/>
+            <Grid Margin="0, 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Text="Save"
+                        Clicked="OnSaveButtonClicked" />
+                <Button Grid.Column="1"
+                        Text="Delete"
+                        Clicked="OnDeleteButtonClicked"/>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

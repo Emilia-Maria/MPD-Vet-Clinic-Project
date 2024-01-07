@@ -39,13 +39,16 @@ public partial class CreateAppointments : ContentPage
     async void OnSaveButtonClicked(object sender, EventArgs e)
     {
         var appointment = (Appointment)BindingContext;
+
         Pet selectedPet = (PetPicker.SelectedItem as Pet);
         appointment.PetID = selectedPet.ID;
         Doctor selectedDoctor = (DoctorPicker.SelectedItem as Doctor);
         appointment.DoctorID = selectedDoctor.ID;
+
         DateTime selectedDate = datePicker.Date;
         TimeSpan selectedTime = timePicker.Time;
         appointment.DateTime = selectedDate.Date + selectedTime;
+
         await App.Database.SaveAppointmentAsync(appointment);
         await Navigation.PopAsync();
     }

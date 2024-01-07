@@ -4,12 +4,14 @@
              x:Class="Vet_Clinic.MainPage">
 
     <ScrollView>
-        <StackLayout Padding="20">
+        <StackLayout Padding="5">
             <Label Text="Welcome to Vet Clinic!"
                FontSize="24"
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="CenterAndExpand" />
-
+            <Image Source="vet_clinic.png"
+                   SemanticProperties.Description="My Shopping List"
+                   HeightRequest="400" />
             <!-- Any other introductory content or instructions can be added here -->
         </StackLayout>
     </ScrollView>
