@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Vet_Clinic.CreateTreatments"
+             Title="Create treatment">
+    <StackLayout Margin="20">
+        <Editor Placeholder="Enter the title of the owner"
+                Text="{Binding Diagnosis}"
+                HeightRequest="100" />
+        <Editor Placeholder="Enter the reason of visit"
+                Text="{Binding Prescription}"
+                HeightRequest="100" />
+        <Editor Placeholder="Enter the reason of visit"
+                Text="{Binding Notes}"
+                HeightRequest="100" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Save"
+                    Clicked="OnSaveButtonClicked" />
+            <Button Grid.Column="1"
+                    Text="Delete"
+                    Clicked="OnDeleteButtonClicked"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>
